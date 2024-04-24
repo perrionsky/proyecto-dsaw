@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon server.js —ignore 'data/*'"
+    "start": "nodemon server.js —ignore 'data/*'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "nodemon": "^3.1.0"
   }
 }
