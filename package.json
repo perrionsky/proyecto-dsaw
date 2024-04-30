@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.1",
-    "nodemon": "^3.1.0"
+    "firebase": "^8.10.1",
+    "nodemon": "^3.1.0",
+    "uuid": "^9.0.1"
   }
 }
