@@ -219,6 +219,23 @@ function setUserToken(userId, userToken) {
     });
 }
 
+// Function to check if a user already exists in the database
+function checkUserExists(userId) {
+  return new Promise((resolve, reject) => {
+      const userRef = database.ref(`Clients/${userId}`);
+
+      userRef.once("value", snapshot => {
+          if (snapshot.exists()) {
+              resolve(true); // User exists
+          } else {
+              resolve(false); // User does not exist
+          }
+      }).catch(error => {
+          reject(error); // Handle possible errors
+      });
+  });
+}
+
 exports.writeFirebase = writeFirebase;
 exports.setUserLoginData = setUserLoginData;
 exports.validatePassword = validatePassword;
@@ -227,3 +244,4 @@ exports.getUserPosts = getUserPosts;
 exports.getPostById = getPostById;
 exports.validateToken = validateToken;
 exports.deletePostById = deletePostById;
+exports.checkUserExists = checkUserExists;
